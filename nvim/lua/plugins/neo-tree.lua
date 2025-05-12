@@ -7,15 +7,15 @@ return {
 		"MunifTanjim/nui.nvim",
 		-- "3rd/image.nvim",
 	},
-	config = function()
-		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left toggle=true<CR>", { desc = "Toggle Neotree" })
-		vim.keymap.set("n", "<leader>nn", ":Neotree filesystem focus<CR>", { desc = "Focus Neotree" })
+    opts = {
+        close_if_last_window = true,
+        filesystem = {
+            hijack_netrw_behavior = "disabled",
+        }
+    },
+    keys = {
+        { "<C-n>", ":Neotree filesystem reveal left toggle=true<CR>",  desc = "Toggle Neotree" },
+        { "<leader>nn", ":Neotree filesystem focus<CR>",  desc = "Focus Neotree" },
 
-		require("neo-tree").setup({
-            close_if_last_window = true,
-			filesystem = {
-				hijack_netrw_behavior = "disabled",
-			},
-		})
-	end,
+    },
 }
