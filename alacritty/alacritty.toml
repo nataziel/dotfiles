@@ -1,0 +1,37 @@
+[env]
+TERM = "xterm-256color"
+
+[terminal.shell]
+program = "C:/Users/jack.allan/AppData/Local/Programs/Git/usr/bin/bash.exe"
+args = ["-i", "-l"]
+
+[window]
+decorations = "None"
+startup_mode = "Maximized"
+padding = { x = 0, y = 0 }
+dynamic_padding = true
+resize_increments = false
+dynamic_title = true
+opacity = 1
+
+[font]
+normal = { family = "FiraCode Nerd Font", style = "Regular"}
+builtin_box_drawing = true
+glyph_offset = { x = 0, y = 0 }
+size = 11.75
+
+[cursor]
+unfocused_hollow = false
+
+[general]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+working_directory = "~/"
+
+[keyboard]
+bindings = [{ key = 'n', mods = 'Control | Shift', action = "CreateNewWindow" }]
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+multiplier = 5
