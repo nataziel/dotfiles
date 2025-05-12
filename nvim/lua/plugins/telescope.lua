@@ -11,8 +11,8 @@ return {
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, {desc='Telescope: list buffers'})
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, {desc = 'Telescope: help tags'})
 			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {desc = 'Telescope: lsp diagnostics'})
-			vim.keymap.set("n", "<leader>fi", builtin.diagnostics, {desc = 'Telescope: lsp incoming'})
-			vim.keymap.set("n", "<leader>fo", builtin.diagnostics, {desc = 'Telescope: lsp outgoing'})
+			vim.keymap.set("n", "<leader>fi", builtin.lsp_incoming_calls, {desc = 'Telescope: lsp incoming'})
+			vim.keymap.set("n", "<leader>fo", builtin.lsp_outgoing_calls, {desc = 'Telescope: lsp outgoing'})
 		end,
 	},
 	{
