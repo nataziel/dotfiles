@@ -23,7 +23,7 @@ vim.opt.cursorline = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlighting" })
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>", { desc = "Go to next item in quickfix list" })
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>", { desc = "Go to previous item in quickfix list" })
-vim.highlight.on_yank()
+vim.hl.on_yank()
 
 vim.diagnostic.config({
 	virtual_text = true,
