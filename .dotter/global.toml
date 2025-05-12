@@ -1,0 +1,12 @@
+[helpers]
+
+[nvim]
+depends = []
+
+[nvim.files]
+nvim = "~/AppData/Local/nvim"
+
+[nvim.variables]
+
+[settings]
+default_target_type = "automatic"
