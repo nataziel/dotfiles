@@ -1,12 +1,16 @@
 [helpers]
 
-[nvim]
-depends = []
-
 [nvim.files]
 nvim = "~/AppData/Local/nvim"
 
-[nvim.variables]
+[alacritty.files]
+alacritty = "~/.config/alacritty"
+
+[starship.files]
+starship = "~/.config/starship.toml"
+
+[glzr.files]
+glzr = "~/.glzr"
 
 [settings]
 default_target_type = "automatic"
