@@ -1,7 +1,7 @@
 return {
     {
         "mason-org/mason.nvim",
-        config = true, -- to automatically call setup function
+        config = true, -- needed to ensure lazy calls .setup({}) when opts not set
     },
     {
         "mason-org/mason-lspconfig.nvim",
