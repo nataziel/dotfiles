@@ -111,4 +111,10 @@ return {
             vim.keymap.set({ "n", "v" }, "<leader>rs", vim.lsp.buf.rename, { desc = "LSP: Rename Symbol" })
         end,
     },
+    {
+        -- automatically configure lua_ls to import type defs
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {}
+    },
 }
