@@ -9,6 +9,6 @@ return {
                 null_ls.builtins.formatting.gofmt,
             },
         })
-        vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "format file with lsp attached to the buffer" })
+        vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "LSP: Format File" })
     end,
 }
