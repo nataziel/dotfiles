@@ -50,7 +50,7 @@ return {
             lspconfig.pyright.setup({
                 settings = {
                     pyright = {
-                        -- Use ruff's import organiser
+                        -- Using Ruff's import organiser
                         disableOrganizeImports = true,
                     },
                     python = {
@@ -64,19 +64,27 @@ return {
             })
 
             -- ruff config
-            local on_attach = function(client, bufnr)
-                if client.name == "ruff" then
-                    -- disable hover in favor of pyright
-                    client.server_capabilities.hoverProvider = false
-                end
-            end
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
+                callback = function(args)
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    if client == nil then
+                        return
+                    end
+                    if client.name == "ruff" then
+                        -- Disable hover in favor of Pyright
+                        client.server_capabilities.hoverProvider = false
+                    end
+                end,
+                desc = "LSP: Disable hover capability from Ruff",
+            })
 
             lspconfig.ruff.setup({
-                -- init_options = {},
-                settings = {
-                    args = { "--line-length 100" },
+                init_options = {
+                    settings = {
+                        args = { "--line-length 100" },
+                    },
                 },
-                on_attach = on_attach,
                 capabilities = capabilities,
             })
 
@@ -105,16 +113,17 @@ return {
                 capabilities = capabilities,
             })
 
-            vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: Go to Definition" })
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: Hover" })
             vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code Action" })
             vim.keymap.set({ "n", "v" }, "<leader>rs", vim.lsp.buf.rename, { desc = "LSP: Rename Symbol" })
+            vim.keymap.set({ "n", "v" }, "grr", vim.lsp.buf.references, { desc = "LSP: References" })
         end,
     },
     {
         -- automatically configure lua_ls to import type defs
         "folke/lazydev.nvim",
         ft = "lua",
-        opts = {}
+        opts = {},
     },
 }
