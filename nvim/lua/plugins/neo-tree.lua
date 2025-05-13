@@ -21,7 +21,7 @@ return {
         },
     },
     keys = {
-        { "<C-n>",      ":Neotree filesystem reveal left toggle=true<CR>", mode = { "n" }, desc = "Toggle Neotree" },
-        { "<leader>nn", ":Neotree filesystem focus<CR>",                   mode = { "n" }, desc = "Focus Neotree" },
+        { "<C-n>",      ":Neotree filesystem reveal left toggle=true<CR>", mode = { "n" }, desc = "Neotree: Toggle" },
+        { "<leader>nn", ":Neotree filesystem focus<CR>",                   mode = { "n" }, desc = "Neotree: Focus" },
     },
 }
