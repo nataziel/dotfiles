@@ -30,5 +30,6 @@ return {
         vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Telescope: lsp diagnostics" })
         vim.keymap.set("n", "<leader>fi", builtin.lsp_incoming_calls, { desc = "Telescope: lsp incoming" })
         vim.keymap.set("n", "<leader>fo", builtin.lsp_outgoing_calls, { desc = "Telescope: lsp outgoing" })
+        vim.keymap.set({ "n", "v" }, "<leader>fr", builtin.lsp_references, { desc = "Telescope: lsp references" })
     end,
 }
