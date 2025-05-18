@@ -14,14 +14,11 @@ return {
         "neovim/nvim-lspconfig",
         dependencies = { "mason-org/mason.nvim", "mason-org/mason-lspconfig.nvim", "saghen/blink.cmp" },
         config = function()
-            local capabilities = require("blink.cmp").get_lsp_capabilities()
-            local lspconfig = require("lspconfig")
+            -- lua_ls
+            vim.lsp.enable("lua_ls")
 
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-            })
-
-            lspconfig.rust_analyzer.setup({
+            -- rust_analyzer
+            vim.lsp.config("rust_analyzer", {
                 on_attach = function()
                     vim.keymap.set("n", "<C-k>", function()
                         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
@@ -44,10 +41,11 @@ return {
                         },
                     },
                 },
-                capabilities = capabilities,
             })
+            vim.lsp.enable("rust_analyzer")
 
-            lspconfig.pyright.setup({
+            -- pyright
+            vim.lsp.config("pyright", {
                 settings = {
                     pyright = {
                         -- Using Ruff's import organiser
@@ -60,8 +58,8 @@ return {
                         },
                     },
                 },
-                capabilities = capabilities,
             })
+            vim.lsp.enable("pyright")
 
             -- ruff config
             vim.api.nvim_create_autocmd("LspAttach", {
@@ -79,16 +77,10 @@ return {
                 desc = "LSP: Disable hover capability from Ruff",
             })
 
-            lspconfig.ruff.setup({
-                init_options = {
-                    settings = {
-                        args = { "--line-length 100" },
-                    },
-                },
-                capabilities = capabilities,
-            })
+            vim.lsp.enable("ruff")
 
-            lspconfig.gopls.setup({
+            -- go
+            vim.lsp.config("gopls", {
                 settings = {
                     gopls = {
                         analyses = {
@@ -97,21 +89,10 @@ return {
                         staticcheck = true,
                     },
                 },
-                capabilities = capabilities,
             })
+            vim.lsp.enable("gopls")
 
-            lspconfig.golangci_lint_ls.setup({
-                init_options = {
-                    command = {
-                        "golangci-lint",
-                        "run",
-                        "--output.json.path=stdout",
-                        "--show-stats=false",
-                        "--issues-exit-code=1",
-                    },
-                },
-                capabilities = capabilities,
-            })
+            vim.lsp.enable("golangci_lint_ls")
 
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: Go to Definition" })
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: Hover" })
