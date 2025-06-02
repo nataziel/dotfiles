@@ -29,9 +29,13 @@ return {
                 settings = {
                     ["rust-analyzer"] = {
                         check = {
+                            workspace = false,
                             command = "clippy",
                         },
                         diagnostics = {
+                            experimental = {
+                                enable = true,
+                            },
                             styleLints = {
                                 enable = true,
                             },
