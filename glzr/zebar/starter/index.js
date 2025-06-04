@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="app">
       <div className="left">
-        <i className="logo nf nf-fa-windows"></i>
+        <i className="logo nf nf-oct-heart"></i>
         {output.glazewm && (
           <div className="workspaces">
             {output.glazewm.currentWorkspaces.map(workspace => (

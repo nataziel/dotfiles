@@ -5,12 +5,12 @@
 @import 'https://www.nerdfonts.com/assets/css/webfont.css';
 
 i {
-  color: rgb(115 130 175 / 95%);
-  margin-right: 7px;
+  color: rgb(180 190 254 / 100%);
+  margin-right: 5px;
 }
 
 body {
-  color: rgb(255 255 255 / 90%);
+  color: rgb(205 214 244 / 100%);
   font-family: FiraCode Nerd Font, monospace;
   font-size: 12px;
   overflow: hidden;
@@ -23,8 +23,8 @@ body,
 }
 
 #root {
-  border-bottom: 1px solid rgb(255 255 255 / 5%);
-  background: linear-gradient(rgb(0 0 0 / 90%), rgb(5 2 20 / 85%));
+  border-bottom: 1px solid rgb(255 255 255 / 0%);
+  background: rgb(17 17 27 / 100%);
 }
 
 .app {
@@ -57,7 +57,7 @@ body,
 .memory,
 .cpu,
 .battery {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .workspaces {
@@ -66,33 +66,38 @@ body,
 }
 
 .workspace {
-  background: rgb(255 255 255 / 5%);
+  background: rgb(203 166 247 / 70%);
   margin-right: 4px;
   padding: 4px 8px;
-  color: rgb(255 255 255 / 90%);
+  color: rgb(17 17 27 / 100%);
   border: none;
   border-radius: 2px;
   cursor: pointer;
 
   &.displayed {
-    background: rgb(255 255 255 / 15%);
+    background: rgb(203 166 247 / 100%);
   }
 
   &.focused,
   &:hover {
-    background: rgb(75 115 255 / 50%);
+    background: rgb(245 194 231 / 100%);
   }
 }
 
 .binding-mode,
 .tiling-direction {
-  background: rgb(255 255 255 / 15%);
-  color: rgb(255 255 255 / 90%);
+  background: rgb(49 50 68 / 65%);
+  color: rgb(205 214 244 / 100%);
   border-radius: 2px;
-  line-height: 1;
+  line-height: 1.5;
   padding: 4px 8px;
   border: 0;
   cursor: pointer;
+
+  &:hover {
+    background: rgb(245 194 231 / 100%);
+    color: rgb(17 17 27 / 100%);
+  }
 }
 
 .binding-mode {
@@ -100,7 +105,7 @@ body,
 }
 
 .cpu .high-usage {
-  color: #900029;
+  color: rgb(243 139 168 / 100%);
 }
 
 .battery {
