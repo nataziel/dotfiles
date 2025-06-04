@@ -3,14 +3,15 @@
  * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
  */
 @import 'https://www.nerdfonts.com/assets/css/webfont.css';
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
 
 i {
-  color: rgb(180 190 254 / 100%);
+  color: rgb(var(--ctp-mocha-lavender-rgb) / 100%);
   margin-right: 5px;
 }
 
 body {
-  color: rgb(205 214 244 / 100%);
+  color: rgb(var(--ctp-mocha-text-rgb) / 100%);
   font-family: FiraCode Nerd Font, monospace;
   font-size: 12px;
   overflow: hidden;
@@ -23,8 +24,7 @@ body,
 }
 
 #root {
-  border-bottom: 1px solid rgb(255 255 255 / 0%);
-  background: rgb(17 17 27 / 100%);
+  background: rgb(var(--ctp-mocha-crust-rgb) / 100%);
 }
 
 .app {
@@ -66,28 +66,28 @@ body,
 }
 
 .workspace {
-  background: rgb(203 166 247 / 70%);
+  background: rgb(var(--ctp-mocha-mauve-rgb) / 70%);
   margin-right: 4px;
   padding: 4px 8px;
-  color: rgb(17 17 27 / 100%);
+  color: rgb(var(--ctp-mocha-crust-rgb) / 100%);
   border: none;
   border-radius: 2px;
   cursor: pointer;
 
   &.displayed {
-    background: rgb(203 166 247 / 100%);
+    background: rgb(var(--ctp-mocha-mauve-rgb) / 100%);
   }
 
   &.focused,
   &:hover {
-    background: rgb(245 194 231 / 100%);
+    background: rgb(var(--ctp-mocha-pink-rgb) / 100%);
   }
 }
 
 .binding-mode,
 .tiling-direction {
-  background: rgb(49 50 68 / 65%);
-  color: rgb(205 214 244 / 100%);
+  background: rgb(var(--ctp-mocha-surface0-rgb) / 65%);
+  color: rgb(var(--ctp-mocha-text-rgb) / 100%);
   border-radius: 2px;
   line-height: 1.5;
   padding: 4px 8px;
@@ -95,8 +95,8 @@ body,
   cursor: pointer;
 
   &:hover {
-    background: rgb(245 194 231 / 100%);
-    color: rgb(17 17 27 / 100%);
+    background: rgb(var(--ctp-mocha-pink-rgb) / 100%);
+    color: rgb(var(--ctp-mocha-crust-rgb) / 100%);
   }
 }
 
@@ -105,7 +105,7 @@ body,
 }
 
 .cpu .high-usage {
-  color: rgb(243 139 168 / 100%);
+  color: rgb(var(--ctp-mocha-red-rgb) / 100%);
 }
 
 .battery {
