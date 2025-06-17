@@ -3,7 +3,7 @@ import React, {
   useEffect,
 } from 'https://esm.sh/react@18?dev';
 import { createRoot } from 'https://esm.sh/react-dom@18/client?dev';
-import * as zebar from 'https://esm.sh/zebar@2';
+import * as zebar from 'https://esm.sh/zebar@3.0';
 
 const providers = zebar.createProviderGroup({
   network: { type: 'network' },
@@ -52,6 +52,16 @@ function App() {
       <div className="right">
         {output.glazewm && (
           <>
+            {output.glazewm.isPaused && (
+              <button
+                className="paused-button"
+                onClick={() =>
+                  output.glazewm.runCommand('wm-toggle-pause')
+                }
+              >
+                PAUSED
+              </button>
+            )}
             {output.glazewm.bindingModes.map(bindingMode => (
               <button
                 className="binding-mode"
@@ -67,7 +77,10 @@ function App() {
             ))}
 
             <button
-              className={`tiling-direction nf ${output.glazewm.tilingDirection === 'horizontal' ? 'nf-md-swap_horizontal' : 'nf-md-swap_vertical'}`}
+              className={`tiling-direction nf ${output.glazewm.tilingDirection === 'horizontal'
+                ? 'nf-md-swap_horizontal'
+                : 'nf-md-swap_vertical'
+                }`}
               onClick={() =>
                 output.glazewm.runCommand('toggle-tiling-direction')
               }
@@ -129,6 +142,8 @@ function getNetworkIcon(networkOutput) {
   switch (networkOutput.defaultInterface?.type) {
     case 'ethernet':
       return <i className="nf nf-md-ethernet_cable"></i>;
+    case 'proprietary_virtual':
+      return <i className="nf nf-md-shield_lock_outline"></i>
     case 'wifi':
       if (networkOutput.defaultGateway?.signalStrength >= 80) {
         return <i className="nf nf-md-wifi_strength_4"></i>;

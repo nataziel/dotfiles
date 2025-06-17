@@ -85,7 +85,8 @@ body,
 }
 
 .binding-mode,
-.tiling-direction {
+.tiling-direction,
+.paused-button {
   background: rgb(var(--ctp-mocha-surface0-rgb) / 65%);
   color: rgb(var(--ctp-mocha-text-rgb) / 100%);
   border-radius: 2px;
@@ -100,7 +101,8 @@ body,
   }
 }
 
-.binding-mode {
+.binding-mode,
+.paused-button {
   margin-right: 4px;
 }
 
