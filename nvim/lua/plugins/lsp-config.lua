@@ -43,6 +43,9 @@ return {
                         procMacro = {
                             enable = true,
                         },
+                        cargo = {
+                            target = true,
+                        }
                     },
                 },
             })
