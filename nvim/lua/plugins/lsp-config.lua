@@ -44,7 +44,7 @@ return {
                             enable = true,
                         },
                         cargo = {
-                            target = true,
+                            targetDir = true,
                         }
                     },
                 },
