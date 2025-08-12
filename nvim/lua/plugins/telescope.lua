@@ -22,8 +22,14 @@ return {
                 no_ignore = true,
             })
         end
-        vim.keymap.set("n", "<C-p>", custom_find, { desc = "Telescope: Find files" })
+        vim.keymap.set(
+            "n",
+            "<leader>ff",
+            custom_find,
+            { desc = "Telescope: Find files (including hidden and gitignored)" }
+        )
 
+        vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Telescope: Find files" })
         vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope: grep text" })
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope: list buffers" })
         vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope: help tags" })
