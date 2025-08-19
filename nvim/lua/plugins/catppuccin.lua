@@ -7,6 +7,7 @@ return {
             integrations = {
                 blink_cmp = true,
                 flash = true,
+                gitsigns = true,
                 lsp_trouble = true,
                 mason = true,
                 neotree = true,
