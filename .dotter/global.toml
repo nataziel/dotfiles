@@ -7,7 +7,7 @@ nvim = "~/AppData/Local/nvim"
 alacritty = "~/.config/alacritty"
 
 [starship.files]
-starship = "~/.config/starship.toml"
+"starship.toml" = "~/.config/starship.toml"
 
 [glzr.files]
 glzr = "~/.glzr"
