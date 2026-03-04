@@ -19,6 +19,7 @@ return {
                 "rust",
                 "json",
                 "javascript",
+                "dockerfile",
             },
             sync_install = false,
             auto_install = true,
