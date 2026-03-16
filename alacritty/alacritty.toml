@@ -7,7 +7,7 @@ args = ["-i", "-l"]
 
 [window]
 decorations = "None"
-startup_mode = "Maximized"
+startup_mode = "Windowed"
 padding = { x = 0, y = 0 }
 dynamic_padding = true
 resize_increments = false
